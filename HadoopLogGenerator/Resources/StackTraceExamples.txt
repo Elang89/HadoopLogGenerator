@@ -1,0 +1,148 @@
+System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
+	at System.Linq.EnumerableSorter`2.ComputeKeys(TElement[] elements, Int32 count)
+	at System.Linq.EnumerableSorter`1.Sort(TElement[] elements, Int32 count)
+	at System.Linq.OrderedEnumerable`1.<GetEnumerator>d__0.MoveNext()
+	at System.Linq.Enumerable.<TakeIterator>d__3a`1.MoveNext()
+	at System.Data.Services.QueryResultInfo.MoveNext()
+	at System.Data.Services.DataService`1.SerializeResponseBody(RequestDescription description, IDataService dataService, IODataResponseMessage responseMessage)
+	at System.Data.Services.DataService`1.HandleRequest()
+	at System.Data.Services.DataService`1.ProcessRequestForMessage(Stream messageBody)
+	at SyncInvokeProcessRequestForMessage(Object , Object[] , Object[] )
+	at System.ServiceModel.Dispatcher.SyncMethodInvoker.Invoke(Object instance, Object[] inputs, Object[]& outputs)
+	at System.ServiceModel.Dispatcher.DispatchOperationRuntime.InvokeBegin(MessageRpc& rpc)
+	at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage5(MessageRpc& rpc)
+	at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage31(MessageRpc& rpc)
+	at System.ServiceModel.Dispatcher.MessageRpc.Process(Boolean isOperationContextSet)
+	at System.ServiceModel.Dispatcher.ChannelHandler.DispatchAndReleasePump(RequestContext request, Boolean cleanThread, OperationContext currentOperationContext)
+	at System.ServiceModel.Dispatcher.ChannelHandler.HandleRequest(RequestContext request, OperationContext currentOperationContext)
+	at System.ServiceModel.Dispatcher.ChannelHandler.AsyncMessagePump(IAsyncResult result)
+	at System.Runtime.Fx.AsyncThunk.UnhandledExceptionFrame(IAsyncResult result)
+	at System.Runtime.AsyncResult.Complete(Boolean completedSynchronously)
+	at System.Runtime.InputQueue`1.AsyncQueueReader.Set(Item item)
+	at System.Runtime.InputQueue`1.EnqueueAndDispatch(Item item, Boolean canDispatchOnThisThread)
+	at System.Runtime.InputQueue`1.EnqueueAndDispatch(T item, Action dequeuedCallback, Boolean canDispatchOnThisThread)
+	at System.ServiceModel.Channels.SingletonChannelAcceptor`3.Enqueue(QueueItemType item, Action dequeuedCallback, Boolean canDispatchOnThisThread)
+	at System.ServiceModel.Channels.HttpPipeline.EnqueueMessageAsyncResult.CompleteParseAndEnqueue(IAsyncResult result)
+	at System.ServiceModel.Channels.HttpPipeline.EnqueueMessageAsyncResult.HandleParseIncomingMessage(IAsyncResult result)
+	at System.Runtime.AsyncResult.SyncContinue(IAsyncResult result)
+	at System.ServiceModel.Channels.HttpPipeline.EmptyHttpPipeline.BeginProcessInboundRequest(ReplyChannelAcceptor replyChannelAcceptor, Action dequeuedCallback, AsyncCallback callback, Object state)
+	at System.ServiceModel.Channels.HttpChannelListener`1.HttpContextReceivedAsyncResult`1.ProcessHttpContextAsync()
+	at System.ServiceModel.Channels.HttpChannelListener`1.BeginHttpContextReceived(HttpRequestContext context, Action acceptorCallback, AsyncCallback callback, Object state)
+	at System.ServiceModel.Channels.SharedHttpTransportManager.EnqueueContext(IAsyncResult listenerContextResult)
+	at System.ServiceModel.Channels.SharedHttpTransportManager.OnGetContextCore(IAsyncResult listenerContextResult)
+	at System.Runtime.Fx.AsyncThunk.UnhandledExceptionFrame(IAsyncResult result)
+	at System.Net.LazyAsyncResult.Complete(IntPtr userToken)
+	at System.Net.ListenerAsyncResult.IOCompleted(ListenerAsyncResult asyncResult, UInt32 errorCode, UInt32 numBytes)
+	at System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* pOVERLAP)
+   
+FileUploaderHandler: There is not enough space on the disk.
+	at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+	at System.IO.FileStream.WriteCore(Byte[] buffer, Int32 offset, Int32 count)
+	at System.Web.HttpRawUploadedContent.TempFile.AddBytes(Byte[] data, Int32 offset, Int32 length)
+	at System.Web.HttpRawUploadedContent.AddBytes(Byte[] data, Int32 offset, Int32 length)
+	at System.Web.HttpRequest.GetEntireRawContent()
+	at System.Web.HttpRequest.get_InputStream()
+	at WebRole1.FileUploadHandler.ProcessRequest(HttpContext context)
+	
+Message=Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.
+  Source=System
+  StackTrace:
+		at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+		at System.Net.FixedSizeReader.ReadPacket(Byte[] buffer, Int32 offset, Int32 count)
+		at System.Net.Security._SslStream.StartFrameBody(Int32 readBytes, Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+		at System.Net.Security._SslStream.StartFrameHeader(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+		at System.Net.Security._SslStream.StartReading(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+		at System.Net.Security._SslStream.ProcessRead(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+		at System.Net.TlsStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+		at System.Net.PooledStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+		at System.Net.Mail.SmtpPooledStream.Dispose(Boolean disposing)
+		at System.IO.Stream.Close()
+		at System.IO.Stream.Dispose()
+		at System.Net.ConnectionPool.Destroy(PooledStream pooledStream)
+		at System.Net.ConnectionPool.ForceCleanup()
+		at System.Net.ConnectionPoolManager.CleanupConnectionPool(ServicePoint servicePoint, String groupName)
+		at System.Net.Mail.SmtpClient.Dispose(Boolean disposing)
+		at System.Net.Mail.SmtpClient.Dispose()
+		at Framework.MailTool.SimpleMailTool`2.<SendMail>d__19.MoveNext() in c:\Users\Administrator\Source\Repos\syp-project-api-server2\Framework\MailTool\SimpleMailTool.cs:line 159
+
+[IOException: The file exists.]
+   System.IO.__Error.WinIOError(Int32 errorCode, String str) +723
+   System.IO.Path.GetTempFileName() +90
+   Infragistics.WebUI.UltraWebChart.UltraChart..ctor() +504
+   _ASP.StaffPerformanceGraph_aspx.__BuildControlfrmStaffPerformance() +188
+   _ASP.StaffPerformanceGraph_aspx.__BuildControlTree(Control __ctrl) +14
+   _ASP.StaffPerformanceGraph_aspx.FrameworkInitialize() +30
+   System.Web.UI.Page.ProcessRequest() +85
+   System.Web.UI.Page.ProcessRequest(HttpContext context) +18
+   System.Web.CallHandlerExecutionStep.System.Web.HttpApplication+IExecutionStep.Execute() +179
+   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean
+   
+   
+Stack Trace:
+[SqlException (0x80131904):]
+	System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection) +1950954
+	System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection) +4846939
+	System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj) +194
+	System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj) +2392
+	System.Data.SqlClient.SqlDataReader.CloseInternal(Boolean closeReader) +169
+	System.Data.SqlClient.SqlDataReader.Close() +96
+	System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString) +292
+	System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async) +954
+	System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result) +162
+	System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method) +32
+	System.Data.SqlClient.SqlCommand.ExecuteScalar() +139
+	Output.RunTable(String outputType, String _outputDataType) +1106
+	Output.ProcessPage() +33
+	Output.Page_Load(Object sender, EventArgs e) +6466
+	System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e) +14
+	System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e) +35
+	System.Web.UI.Control.OnLoad(EventArgs e) +99
+	System.Web.UI.Control.LoadRecursive() +50
+	System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +627
+	
+[ArgumentNullException: Value cannot be null.
+	Parameter name: manager]
+	Microsoft.AspNet.Identity.UserManagerExtensions.Find(UserManager`2 manager, String userName, String password) +221
+	Account_Login.LogIn(Object sender, EventArgs e) in Login.aspx.cs:17
+	System.Web.UI.WebControls.Button.OnClick(EventArgs e) +9628026
+	System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument) +103
+	System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument) +10
+	System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument) +13
+	System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData) +35
+	System.Web.UI.<ProcessRequestMainAsync>d__14.MoveNext() +5226
+	
+System.FormatException was unhandled
+Message="Input string was not in a correct format."
+Source="mscorlib"
+StackTrace:
+	at System.Text.StringBuilder.FormatError()
+	at System.Text.StringBuilder.AppendFormat(IFormatProv ider provider,
+	String format, Object[] args)
+	at System.String.Format(IFormatProvider provider, String format,
+	Object[] args)
+	at System.String.Format(String format, Object arg0, Object arg1)
+	at ConsoleApplication6.Program.Main(String[] args) in
+	d:\temp\ConsoleApplication6\Program.cs:line 11
+	at System.AppDomain.nExecuteAssembly(Assembly assembly, String[]
+	args)
+	at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence
+	assemblySecurity, String[] args)
+	at Microsoft.VisualStudio.HostingProcess.HostProc.Run UsersAssembly()
+	at System.Threading.ThreadHelper.ThreadStart_Context( Object state)
+	at System.Threading.ExecutionContext.Run(ExecutionCon text
+	executionContext, ContextCallback callback, Object state)
+	at System.Threading.ThreadHelper.ThreadStart()
+	
+System.NotSupportedException was unhandled
+Message="NotSupportedException"
+StackTrace:
+	at System.RuntimeType.GetTypeImpl()
+	at System.Type.GetType()
+	at PhoneTest.Form1.menuItem1_Click()
+	at System.Windows.Forms.MenuItem.OnClick()
+	at System.Windows.Forms.Menu.ProcessMnuProc()
+	at System.Windows.Forms.Form.WnProc()
+	at System.Windows.Forms.Control._InternalWnProc()
+	at Microsoft.AGL.Forms.EVL.EnterMainLoop()
+	at System.Windows.Forms.Application.Run()
+	at PhoneTest.Program.Main()

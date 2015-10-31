@@ -1,0 +1,124 @@
+{
+    "products": [
+        {
+            "name": "Java",
+            "version": "1.8"
+        },
+        {
+            "name": "MySQL Workbench",
+            "version": "6.3"
+        },
+        {
+            "name": "MySQL Workbench",
+            "version": "6.2"
+        },
+        {
+            "name": "PLSQL Developer",
+            "version": "11.0"
+        },
+        {
+            "name": "Oracle SQL Developer",
+            "version": "4.1.2"
+        },
+        {
+            "name": "SQL Server Management Studio",
+            "version": "2014"
+        },
+        {
+            "name": "Python",
+            "version": "3.5.0"
+        },
+        {
+            "name": "Microsoft Powerpoint",
+            "version": "2016"
+        },
+        {
+            "name": "Microsoft Visio",
+            "version": "2016"
+        },
+        {
+            "name": "Internet Explorer",
+            "version": "8.0"
+        },
+        {
+            "name": "Microsoft Word",
+            "version": "2016"
+        },
+        {
+            "name": "Microsoft Excel",
+            "version": "2016"
+        },
+        {
+            "name": "Google Chrome",
+            "version": "48.0.2547"
+        },
+        {
+            "name": "Notepad ++",
+            "version": "6.8.6"
+        },
+        {
+            "name": "Eclipse",
+            "version": "Mars"
+        },
+        {
+            "name": "Mozilla Firefox",
+            "version": "41.0.1"
+        },
+        {
+            "name": "7-Zip",
+            "version": "15.09"
+        },
+        {
+            "name": "Sublime Text 2",
+            "version": "2.0.2"
+        },
+        {
+            "name": "Vim",
+            "version": "7.0"
+        },
+        {
+            "name": "Opera",
+            "version": "33.0.1990.43"
+        },
+        {
+            "name": "VirtualBox",
+            "version": "5.0.8"
+        },
+        {
+            "name": "VMWare Workstation Pro",
+            "version": "12"
+        },
+        {
+            "name": "Microsoft Visual Studio Community",
+            "version": "2015"
+        },
+        {
+            "name": "Avast Free Antivirus",
+            "version": "10.4.2333"
+        },
+        {
+            "name": "KeePass",
+            "version": "2.30"
+        },
+        {
+            "name": "Windows Powershell",
+            "version": "4.0"
+        },
+        {
+            "name": "Cygwin",
+            "version": "2.2.1"
+        },
+        {
+            "name": "DataStax Community Edition",
+            "version": "2.2.3"
+        },
+        {
+            "name": "3ds Max",
+            "version": "2015"
+        },
+        {
+            "name": "AutoCAD",
+            "version": "2015"
+        }
+    ]
+}
