@@ -108,7 +108,7 @@ namespace HadoopLogGenerator
             return logObject;
         }
 
-        public String generateJson()
+        public JObject generateJson()
         {
             int number = random.Next(0, logList.Count-1);
             List<String> randomList = new List<String>(logList[number]);
@@ -120,9 +120,7 @@ namespace HadoopLogGenerator
                 new JProperty("errorMessage", randomList[4]),
                 new JProperty("stackTrace", randomList[5]));
 
-            String jsonString = jsonObject.ToString();
-
-            return jsonString;
+            return jsonObject;
         }
      
     }

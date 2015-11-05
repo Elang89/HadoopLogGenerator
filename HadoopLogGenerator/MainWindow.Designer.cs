@@ -40,6 +40,7 @@
             this.createLogButton.TabIndex = 0;
             this.createLogButton.Text = "Create Logs";
             this.createLogButton.UseVisualStyleBackColor = true;
+            this.createLogButton.Click += new System.EventHandler(this.createLogButton_Click);
             // 
             // message
             // 
