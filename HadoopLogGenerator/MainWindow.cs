@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Formatting;
+using System.Threading;
 
 namespace HadoopLogGenerator
 {
@@ -24,30 +25,43 @@ namespace HadoopLogGenerator
 
         private void createLogButton_Click(object sender, EventArgs e)
         {
+
+            this.createLogButton.Enabled = false;
+            Task task1 = Task.Factory.StartNew(() => insertLogs(1, 20000));
+            Task task2 = Task.Factory.StartNew(() => insertLogs(2, 20000));
+            Task task3 = Task.Factory.StartNew(() => insertLogs(3, 20000));
+            Task task4 = Task.Factory.StartNew(() => insertLogs(4, 20000));
+
+
+        }
+
+        private void insertLogs(int id, int cycleSleepTime)
+        {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:49496");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            LogGeneratorObject logObject = LogGeneratorObject.getInstance();
-            JObject jObject = logObject.generateJson();
-            string json = JsonConvert.SerializeObject(jObject);
-            Console.WriteLine(json);
+            LogGeneratorObject logObject = new LogGeneratorObject();
             StringContent jsonContent;
             HttpResponseMessage response;
 
-            try
+            for (int i = 0; i < 125000; i++)
             {
-                jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-                response = client.PostAsync("/Logs/Create", jsonContent).Result;
-                Console.WriteLine(response);
+                try
+                {
+                    Console.WriteLine("task {0} has begun inserting log.", id);
+                    JObject jObject = logObject.generateJson();
+                    string json = JsonConvert.SerializeObject(jObject);
+                    jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+                    response = client.PostAsync("/Logs/Create", jsonContent).Result;
+                    Console.WriteLine("task {0} has inserted log", id);
+                }
+                catch (Exception error)
+                {
+                    Console.WriteLine(error.ToString());
+                }
             }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message.ToString());
-            }
-            
-
         }
     }
 }

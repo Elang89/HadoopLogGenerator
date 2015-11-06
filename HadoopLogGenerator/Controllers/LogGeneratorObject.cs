@@ -25,7 +25,7 @@ namespace HadoopLogGenerator
         private static LogGeneratorObject logObject;
         private List<List<String>> logList;
 
-        private LogGeneratorObject()
+         public LogGeneratorObject()
         {
             logList = new List<List<String>>();
             resourceName = "HadoopLogGenerator.Resources.ProductList.json";
@@ -92,21 +92,16 @@ namespace HadoopLogGenerator
 
                 if (String.IsNullOrWhiteSpace(line))
                 {
-                    stackTraces.Add(paragraph);
-                    paragraph = "";
+                    if (paragraph != "   ")
+                    {
+                        stackTraces.Add(paragraph);
+                        paragraph = "";
+                    }
                 }
             }
 
         }
 
-        public static LogGeneratorObject getInstance()
-        {
-            if (logObject == null)
-            {
-                logObject = new LogGeneratorObject();
-            }
-            return logObject;
-        }
 
         public JObject generateJson()
         {
